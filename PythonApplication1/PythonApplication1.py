@@ -1,22 +1,20 @@
-tipo_pago = ""
-tipo_tarjeta = ""
-recargo = 0.0
-descuento = 0.0
-dia = ""
-monto_inicial = 0.0
-precio = 0.0
-cantidad = 0
-monto_final = 0.0
+metodoPago=input("Ingrese el Metodo de Pago a realizar (EFECTIVO/TARJETA): ").upper()
 
-cantidad = int(input("Ingrese la cantidad de productos: "))
-precio = float(input("Ingrese el precio unitario: "))
-tipo_pago = input("Ingrese el tipo de pago (EFECTIVO / TARJETA / BILLETERA DIGITAL): ").upper()
+if metodoPago == "EFECTIVO":
+    print("Ha elegido pagar con efectivo. Se le otorgara un 5% de descuento")
 
-monto_inicial = cantidad * precio
+elif metodoPago == "TARJETA":
+    tipoTarjeta = input("Ingrese el tipo de tarjeta (CREDITO/DEBITO): ").upper()
+    
+    if tipoTarjeta == "CREDITO":
+        tipoTarjeta = print("Se le otorgara un 7% de descuento")
+    elif tipoTarjeta == "DEBITO":
+        tipoTarjeta = print("Se le otorgara un 10& de descuento")
+    else:
+        print ("Tipo de Tarjeta no valido!!!")
 
-if tipo_pago == "EFECTIVO":
-    if cantidad > 3:
-        descuento = monto_inicial * 0.10
-elif tipo_pago == "TARJETA":
-    tipo_tarjeta = input("Ingrese el tipo de tarjeta (CRÉDITO/DÉBITO): ").upper()
+else:
+    print("Metodo de Pago no Valido!!!")
 
+
+    
